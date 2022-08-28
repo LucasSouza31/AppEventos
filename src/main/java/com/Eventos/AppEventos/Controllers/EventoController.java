@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.Eventos.AppEventos.Models.Evento;
 import com.Eventos.AppEventos.Repository.EventoRepository;
@@ -30,7 +31,14 @@ public String form(Evento evento) {
     return "redirect:/cadastrarEvento";
 }
 
+@RequestMapping("/eventos")
+public ModelAndView listaeventos() {
+    ModelAndView mv= new ModelAndView("index");
+    Iterable<Evento> eventos= event.findAll();
+    mv.addObject("eventos",eventos);
 
+    return mv;
+}
 
 
 
