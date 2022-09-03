@@ -43,37 +43,15 @@
         </div>
     </nav>
 
-
-    <section>
-
-        <div>
-
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Local</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="evento : ${eventos}">
-                        <td><span scope="row" th:text="${evento.id}">1</span></td>
-                        <td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0,evento.id)).build()}"><span th:text="${evento.nome}">nome evento</span></a></td>
-                        <td><span th:text="${evento.local}">local evento</span></td>
-                        <td><span th:text="${evento.data}"> data evento</span></td>
-                        <td><span th:text="${evento.horario}">horario evento</span></td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-
-
-    </section>
-
+    <h5>Detalhes do Evento</h5>
+    <div th:each="evento : ${evento}" class="container">
+        <div class="row">
+			<p>Nome: <span th:text="${evento.nome}"></span></p>
+			<p>Local: <span th:text="${evento.local}"></span></p>
+			<p>Data: <span th:text="${evento.data}"></span></p>
+			<p>Horario: <span th:text="${evento.horario}"></span></p>
+		</div>
+    </div>
 
 
 
