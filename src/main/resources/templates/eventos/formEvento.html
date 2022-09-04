@@ -19,39 +19,42 @@
 </head>
 
 <body>
-    <h1>Cadastrar Eventos</h1>
+
+
+    <section  class="container">
+        <h1>Cadastrar Eventos</h1>
+    </section>  
+
    <form method="post" class="container">
 
     <div >
 
-        <div class="row align-items-start">
+        <div class="row g-3">
 
-                <div class="col-8">
+                <div class="col-md-6">
                     Nome:<input type="text" class="form-control" value="" name="nome">
                 </div>
 
-                <div class="col-8 ">
+                <div class="col-md-6 ">
                     Local:<input type="text" class="form-control" value="" name="local">
                 </div>
-                <br>
-                <div class="col-4 ">
+                
+                <div class="col-md-6">
                     Horário:<input type="time" class="form-control"  value="" name="horario">
                 </div>
 
-                <div class="col-4 ">    
+                <div class="col-md-6">    
                     Data:<input type="date" class="form-control" value="" name="data">   
-                </div>               
+                </div>    
+                <div class="col-md-6" >
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                 </div>           
                
          </div>
 
-         <div >
-            <button type="submit" class="btn btn-primary">Salvar</button>
-         </div>
+         
 
     </div>
-
-
-
 
    </form>
 
