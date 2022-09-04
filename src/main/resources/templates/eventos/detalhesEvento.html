@@ -43,17 +43,34 @@
         </div>
     </nav>
 
+
+<section class="container">
     <h5>Detalhes do Evento</h5>
-    <div th:each="evento : ${evento}" class="container">
-        <div class="row">
-			<p>Nome: <span th:text="${evento.nome}"></span></p>
-			<p>Local: <span th:text="${evento.local}"></span></p>
-			<p>Data: <span th:text="${evento.data}"></span></p>
-			<p>Horario: <span th:text="${evento.horario}"></span></p>
-		</div>
-    </div>
+</section>
+    <section class="container">
+        <div th:each="evento : ${evento}" class="container">
+            <div class="row">
+                <p>Nome: <span th:text="${evento.nome}"></span></p>
+                <p>Local: <span th:text="${evento.local}"></span></p>
+                <p>Data: <span th:text="${evento.data}"></span></p>
+                <p>Horario: <span th:text="${evento.horario}"></span></p>
+            </div>
+        </div>
+    </section>
 
-
+    <section class="container">
+    <div class="row g-3">
+            <div class="col-md-6">
+             Nome:<input type="text" class="form-control" placeholder="Nome" aria-label="First name" name="nomeConvidado">
+            </div>
+            <div class="col-md-6">
+             RG: <input type="text" class="form-control" placeholder="RG" aria-label="Last name" name="rg">
+            </div>
+            <div class="col-md-6" >
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </section>
 
 </body>
 

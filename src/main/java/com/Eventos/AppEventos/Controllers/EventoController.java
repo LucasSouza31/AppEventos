@@ -26,9 +26,7 @@ public String form() {
 
 @RequestMapping( value = "/cadastrarEvento", method = RequestMethod.POST)  
 public String form(Evento evento) {
-
     event.save(evento);
-
     return "redirect:/cadastrarEvento";
 }
 
@@ -45,7 +43,7 @@ public ModelAndView listaeventos() {
 public ModelAndView detalhesEvento( @PathVariable("id") long id ) {
 Evento evento= event.findById(id);
 ModelAndView mv= new ModelAndView("eventos/detalhesEvento");
-mv.addObject("evento",evento)  ;  
+mv.addObject("evento",evento)  ;  // foi colocado "evento", na página detalhesEvento
 return mv;
 }
 
