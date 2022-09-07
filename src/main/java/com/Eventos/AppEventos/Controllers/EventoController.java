@@ -33,10 +33,21 @@ public String form() {
 
 
 @RequestMapping( value = "/cadastrarEvento", method = RequestMethod.POST)  
-public String form(Evento evento) {
+public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes) {
+    
+    if(result.hasErrors()){
+        attributes.addFlashAttribute("Mensagem", "Verifique os campos!");
+        return "redirect:/cadastrarEvento";
+    }
+
     event.save(evento);
+    attributes.addFlashAttribute("Mensagem", "Evento cadastrado com sucesso!");
     return "redirect:/cadastrarEvento";
 }
+
+
+
+
 
 @RequestMapping("/eventos")
 public ModelAndView listaeventos() {
