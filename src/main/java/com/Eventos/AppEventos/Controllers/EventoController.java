@@ -45,6 +45,13 @@ public String form(@Valid Evento evento, BindingResult result, RedirectAttribute
     return "redirect:/cadastrarEvento";
 }
 
+@RequestMapping("/deletar")
+public String deletarEvento(long id) {
+    Evento evento = event.findById(id);
+    event.delete(evento);
+
+    return "redirect:/eventos";
+}
 
 
 
