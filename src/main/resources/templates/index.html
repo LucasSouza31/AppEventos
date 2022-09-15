@@ -70,7 +70,7 @@
                         <td><span th:text="${evento.local}">local evento</span></td>
                         <td><span th:text="${evento.data}"> data evento</span></td>
                         <td><span th:text="${evento.horario}">horario evento</span></td>
-                        <td><a th:href="${(#mvc.url('EC#deletarEvento').arg(0,evento.id)).build()}" ><i class="bi bi-x-circle"></i></a></td>
+                        <td><a th:href="${(#mvc.url('EC#deletarEvento').arg(0,evento.id)).build()}" ><i class="bi bi-trash"></i></a></td>
                     </tr>
                 </tbody>
             </table>

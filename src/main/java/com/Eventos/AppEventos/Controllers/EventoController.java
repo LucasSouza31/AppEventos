@@ -45,7 +45,7 @@ public String form(@Valid Evento evento, BindingResult result, RedirectAttribute
     return "redirect:/cadastrarEvento";
 }
 
-@RequestMapping("/deletar")
+@RequestMapping("/deletarEvento")
 public String deletarEvento(long id) {
     Evento evento = event.findById(id);
     event.delete(evento);
@@ -53,6 +53,18 @@ public String deletarEvento(long id) {
     return "redirect:/eventos";
 }
 
+@RequestMapping("/deletarConvidado")
+ public String deletarConvidado(String rg){
+
+    Convidados convidado = guest.findByRg(rg);
+    guest.delete(convidado);
+
+   Evento evento = convidado.getEvento();
+   long codigoLong= evento.getId(); // Id do evento
+    String Id= ""+ codigoLong;
+    return "redirect:/ " + Id;
+
+ }
 
 
 
